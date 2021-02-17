@@ -1,0 +1,6 @@
+.Header {
+    background-color: brown;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: minmax(150px, 25%) 1fr;
+}
