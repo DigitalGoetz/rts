@@ -15,12 +15,13 @@ function SessionControls() {
 
   const userContext = useContext(UserContext);
   const connectionContext = useContext(ConnectionContext);
-  const startConnection = () => {
+  const startWebsocket = (event: any) => {
+    event.preventDefault();
     userContext.updateUserNameCtx(inputValue);
-    connectionContext.setConnectedCtx();
+    connectionContext.setConnectedCtx(inputValue);
   }
 
-  const [usernameComponent, setUsernameComponent] = useState(userName = <div><input type="text" onChange={inputChange}></input><button onClick={startConnection}>Connect</button></div>);
+  const [usernameComponent, setUsernameComponent] = useState(userName = <div><input type="text" onChange={inputChange}></input><button onClick={startWebsocket}>Connect</button></div>);
 
   useEffect(() => {
     if (connectionContext.connectedCtx) {

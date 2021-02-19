@@ -3,7 +3,8 @@ import { createContext } from 'react';
 
 const ConnectionContext = createContext({
     connectedCtx: true,
-    setConnectedCtx: () => { }
+    setConnectedCtx: (message: string) => { },
+    sendMessage: (message: string) => { }
 })
 
 export default ConnectionContext;
